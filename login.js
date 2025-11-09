@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const currentUser = sessionStorage.getItem("currentUser");
     if (isLoggedIn && currentUser) {
-        window.location.href = "pages/index.html";
+        window.location.href = "/index.html";
         return;
     }
 
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch((err) => console.error("⚠️ Logging failed:", err));
 
         // Redirect
-        setTimeout(() => (window.location.href = "pages/index.html"), 1200);
+        setTimeout(() => (window.location.href = "/index.html"), 1200);
     });
 
     // ==========================
@@ -148,7 +148,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 "currentUser",
                 JSON.stringify({ username: newUser, password: newPass, role: "user" })
             );
-            window.location.href = "pages/index.html";
+            window.location.href = "/index.html";
         }, 1500);
     });
 });
+
