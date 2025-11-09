@@ -1,5 +1,5 @@
 // ==========================
-// LOGIN + REGISTER SYSTEM (LOCAL VERSION)
+// LOGIN + REGISTER SYSTEM (LOCAL VERSION) + LOG TO VERCEL
 // ==========================
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");
@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const currentUser = sessionStorage.getItem("currentUser");
     if (isLoggedIn && currentUser) {
-        window.location.href = "index.html";
+        window.location.href = "pages/index.html";
         return;
     }
 
     // Default users
     const defaultUsers = [
-        { username: "admin", password: "D5um@rd1", role: "admin" },
+        { username: "admin", password: "admin123", role: "admin" },
         { username: "user", password: "user123", role: "user" },
     ];
     if (!localStorage.getItem("users")) {
@@ -76,7 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
         loginForm.classList.remove("hidden");
     });
 
+    // ==========================
     // LOGIN handler
+    // ==========================
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const username = usernameInput.value.trim();
@@ -101,33 +103,52 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         showMessage(message, "✅ Login berhasil! Mengalihkan...", "success");
-        setTimeout(() => (window.location.href = "index.html"), 1200);
+
+        // ✅ Catat login ke serverless function di Vercel
+        fetch("/api/log-login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username }),
+        })
+            .then((res) => res.json())
+            .then((data) => console.log("✅ Login logged:", data))
+            .catch((err) => console.error("⚠️ Logging failed:", err));
+
+        // Redirect
+        setTimeout(() => (window.location.href = "pages/index.html"), 1200);
     });
 
+    // ==========================
     // REGISTER handler
+    // ==========================
     registerForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const newUser = regUser.value.trim();
         const newPass = regPass.value.trim();
         const confirm = regConfirm.value.trim();
 
-        if (!newUser || !newPass) return showMessage(regMessage, "❌ Harap isi semua field!", "error");
-        if (newPass !== confirm) return showMessage(regMessage, "⚠️ Password tidak cocok!", "error");
+        if (!newUser || !newPass)
+            return showMessage(regMessage, "❌ Harap isi semua field!", "error");
+        if (newPass !== confirm)
+            return showMessage(regMessage, "⚠️ Password tidak cocok!", "error");
 
         let users = JSON.parse(localStorage.getItem("users")) || [];
-        if (users.find((u) => u.username === newUser)) return showMessage(regMessage, "⚠️ Username sudah ada!", "error");
+        if (users.find((u) => u.username === newUser))
+            return showMessage(regMessage, "⚠️ Username sudah ada!", "error");
 
         users.push({ username: newUser, password: newPass, role: "user" });
         localStorage.setItem("users", JSON.stringify(users));
 
         showMessage(regMessage, "✅ Akun berhasil dibuat! Login otomatis...", "success");
 
-        // auto-login
+        // Auto-login setelah register (opsional)
         setTimeout(() => {
             sessionStorage.setItem("isLoggedIn", "true");
-            sessionStorage.setItem("currentUser", JSON.stringify({ username: newUser, password: newPass, role: "user" }));
-            window.location.href = "index.html";
+            sessionStorage.setItem(
+                "currentUser",
+                JSON.stringify({ username: newUser, password: newPass, role: "user" })
+            );
+            window.location.href = "pages/index.html";
         }, 1500);
     });
 });
-
