@@ -1,0 +1,342 @@
+/* ========== Global Styles (Tema Hitam Elegan) ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #7b7d81ea;
+    color: #000000;
+    line-height: 1.6;
+}
+
+.section {
+    padding: 4rem 0;
+    scroll-padding-top: 80px;
+    scroll-margin-top: -80px;
+}
+
+
+/* ========== Navbar ========== */
+.navbar {
+    background: #1f1f1f;
+    color: #fff;
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 10px 20px;
+    z-index: 1000;
+    justify-content: center !important;
+}
+
+
+/* Tombol Kembali */
+.hover-underline {
+
+    font-size: 1rem;
+    color: #ffffff !important;
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.hover-underline::after,
+.hover-underline::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #bd14e7, #1507db);
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-out;
+}
+
+.hover-underline::before {
+    top: -5px;
+    transform-origin: left;
+}
+
+.hover-underline:hover::after,
+.hover-underline:hover::before {
+    transform: scaleX(1);
+}
+
+/* Circular Photo */
+.circular-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 3px solid var(--highlight-color);
+    box-shadow: #525050;
+    transition: var(--transition);
+    margin-bottom: 20px;
+}
+
+.circular-photo:hover {
+    transform: scale(1.05);
+    border-color: var(--text-color);
+}
+
+.circular-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/*  Hero Section  */
+.profile-header {
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 30px;
+}
+
+.profile-header h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2.5rem;
+}
+
+/* pasangan Section */
+.wrapper-tengah {
+    display: flex;
+    flex-direction: column;
+    /* Menumpuk grid secara vertikal */
+    align-items: center;
+    /* Memusatkan semua grid secara horizontal */
+    justify-content: center;
+    /* Memusatkan semua grid secara vertikal di dalam wrapper */
+    height: 100vh;
+    /* Contoh: Memusatkan di viewport penuh */
+    width: 100%;
+}
+
+.spouse-content {
+    padding: 4rem 0;
+    margin-top: 40px;
+}
+
+.spouse-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 3rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.spouse-card {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: #525050;
+    transition: #555;
+    animation: fadeInUp 1s ease;
+}
+
+.spouse-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(75, 73, 73, 0.836);
+}
+
+.spouse h3 {
+    margin: 1rem 0;
+}
+
+
+/* Anak Section */
+.children-content {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.children-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.child-card {
+    height: 430px;
+    width: 280px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+    animation: fadeInUp 1s ease;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+.child-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.child-card .info-box {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Liquid Morph Effect */
+.liquid-morph-element {
+    width: 140px;
+    height: 30px;
+    background: #615f5d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.liquid-morph-element span {
+    color: #fff;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.liquid-morph-element::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(rgb(0, 0, 0) 0deg,
+            rgb(0, 0, 0) 360deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.liquid-morph-element:hover {
+    border-radius: 15px;
+    transform: rotate(15deg);
+}
+
+.liquid-morph-element:hover::before {
+    opacity: 0.5;
+    transform: scale(2);
+}
+
+/* WhatsApp Button Styles */
+.wa-btn {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    cursor: pointer !important;
+    user-select: none;
+    transition: all 0.3s ease !important;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    padding: 3px;
+}
+
+.wa-btn:hover {
+    color: white !important;
+    transform: translateY(-2px);
+
+}
+
+.wa-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgb(54, 52, 52);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.wa-btn:active::before {
+    width: 100px;
+    height: 100px;
+}
+
+/* Prevent text selection on WA buttons */
+.wa-btn {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Ensure WA buttons don't inherit parent click events */
+.child-card .wa-btn,
+.spouse-card .wa-btn {
+    pointer-events: auto !important;
+}
+
+/* Hover effect for border reveal */
+.btn-border-reveal.wa-btn::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #1e5225;
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.btn-border-reveal.wa-btn:hover::after {
+    width: 100%;
+}
+
+.btn-border-reveal.wa-btn:hover {
+    color: white;
+}
+
+
+/* ========== Footer ========== */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 1.6rem;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        display: none;
+        background: #1f1f1f;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        border-radius: 10px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+}

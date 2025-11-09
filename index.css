@@ -1,0 +1,788 @@
+/* === GLOBAL === */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+body {
+    background-color: #7b7d81ea;
+    color: #000000;
+    line-height: 1.6;
+}
+
+section {
+    padding-top: 80px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-align: center;
+    font-family: "poppins", sans-serif;
+}
+
+/* === NAVBAR  === */
+header {
+    background-color: #000000;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    padding: 10px 20px;
+    z-index: 1000;
+    padding-left: 10%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 2px 10px;
+
+}
+
+.nav-links a:hover {
+    background-color: #51545a;
+    border-radius: 15px;
+}
+
+.logout-btn {
+    border: none;
+    padding: 6px 16px;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: auto;
+    font-weight: 600;
+    min-width: 80px;
+}
+
+.logout-btn:hover {
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+}
+
+/* Navbar: responsive hamburger */
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+header .nav-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.nav-toggle .bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #ffffff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Mobile: hide links, show toggle */
+@media (max-width: 800px) {
+    .navbar {
+        padding: 1px 0;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        right: 0;
+        background: #3d3d3d;
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+        padding: 0;
+        padding-top: 30px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        padding: 15px 20px;
+    }
+
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
+
+    .nav-toggle .bar {
+        width: 20px;
+        height: 3px;
+        background: #ffffff;
+        margin: 2px 0;
+        transition: 0.3s;
+        align-items: center;
+        margin-left: 30px;
+    }
+
+    .nav-links a {
+        padding: 30px 20px;
+        color: white;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .logout-btn {
+        margin-left: auto;
+        margin-right: 10px;
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+
+    /* Hamburger animation */
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle[aria-expanded="true"] .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* ... (kode CSS lainnya tetap sama) ... */
+
+/* Circular Photo */
+.circular-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 3px solid var(--highlight-color);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    margin-bottom: 30px;
+}
+
+.circular-photo:hover {
+    transform: scale(1.05);
+    border-color: var(--text-color);
+}
+
+.circular-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0, url('img/apa.jpg') center/cover no-repeat;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    animation: fadeInUp 1s ease;
+    margin-top: 80px;
+    max-width: 500px;
+}
+
+.hero-content h3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+/* Istri Section */
+.wife-content {
+    padding: 4rem 0;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.wife-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.wife-1,
+.wife-2,
+.wife-3 {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    animation: fadeInUp 1s ease;
+}
+
+.wife-1:hover,
+.wife-2:hover,
+.wife-3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.wife-1 h3,
+.wife-2 h3,
+.wife-3 h3 {
+    margin: 1rem 0;
+}
+
+.children-count {
+    color: var(--highlight-color);
+    margin-top: 1rem;
+}
+
+/* Anak Section */
+.children-content {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center !important;
+    margin-bottom: 60px;
+}
+
+.children-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+}
+
+.child-card {
+    height: 450px;
+    width: 280px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+    animation: fadeInUp 1s ease;
+    padding-top: 30px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center !important;
+}
+
+.child-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.child-card .info-box {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Liquid Morph Effect */
+.liquid-morph-element {
+    margin-top: 10px;
+    width: 140px;
+    height: 30px;
+    background: #504f4d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.liquid-morph-element span {
+    color: #fff;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.liquid-morph-element::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(rgb(0, 0, 0) 0deg,
+            rgb(0, 0, 0) 360deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.liquid-morph-element:hover {
+    border-radius: 15px;
+    transform: rotate(15deg);
+}
+
+.liquid-morph-element:hover::before {
+    opacity: 0.5;
+    transform: scale(2);
+}
+
+/* WhatsApp Button Styles */
+.wa-btn {
+    margin-top: 15px;
+    cursor: pointer !important;
+    user-select: none;
+    transition: all 0.3s ease !important;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding: 3px;
+}
+
+.wa-btn:hover {
+    color: white !important;
+    transform: translateY(-2px);
+
+}
+
+.wa-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgb(54, 52, 52);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.wa-btn:active::before {
+    width: 100px;
+    height: 100px;
+}
+
+/* Prevent text selection on WA buttons */
+.wa-btn {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Ensure WA buttons don't inherit parent click events */
+.child-card .wa-btn,
+.spouse-card .wa-btn {
+    pointer-events: auto !important;
+}
+
+/* Hover effect for border reveal */
+.btn-border-reveal.wa-btn::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #1e5225;
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.btn-border-reveal.wa-btn:hover::after {
+    width: 100%;
+}
+
+.btn-border-reveal.wa-btn:hover {
+    color: white;
+}
+
+/* Upload Section */
+
+.upload-section {
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.upload-area {
+    border: 2px dashed #10da5d;
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.upload-area:hover {
+    background-color: #5f6064;
+}
+
+.upload-area i {
+    font-size: 48px;
+    color: #6a11cb;
+    margin-bottom: 15px;
+}
+
+.upload-text {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.file-input {
+    display: none;
+}
+
+.btn {
+    border: none;
+    padding: 4px 20px;
+    margin-top: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 6px;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    color: #0c5f2c;
+}
+
+.btn:disabled {
+    background: grey;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background: #6c757d;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+/* Preview gambar */
+.preview-section {
+    display: none;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.preview-title {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.preview-item {
+    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.preview-item:hover {
+    transform: scale(1.03);
+}
+
+.preview-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.preview-info {
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.preview-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.preview-size {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Galeri foto */
+.gallery-section {
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 1100px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 80px;
+}
+
+.gallery-title {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.gallery-info {
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.gallery-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.gallery-date {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.btn-gallery {
+    padding: 10px;
+}
+
+.empty-gallery {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.empty-gallery i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+/* Notifikasi */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateX(150%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification.success {
+    background-color: #4CAF50;
+}
+
+.notification.error {
+    background-color: #f44336;
+}
+
+/* Folder info */
+.folder-info {
+    background-color: #e9f7fe;
+    border-left: 4px solid #2196F3;
+    padding: 15px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .preview-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .preview-item {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Events Section */
+.bewara-section {
+    margin-top: 60px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.bewara-section h2 {
+    text-align: center !important;
+    margin-bottom: 1rem;
+}
+
+.events-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.event-item {
+    display: flex;
+    margin-bottom: 2rem;
+    background-color: #53585e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: #1b1b1b;
+    animation: fadeInUp 1s ease;
+}
+
+.event-date {
+    background-color: #3b4147;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+}
+
+.date-day {
+    font-size: 1rem;
+    padding: 10px 0;
+}
+
+.date-month,
+.date-year {
+    font-size: 0.9rem;
+    padding: 10px 0;
+}
+
+.event-content {
+    padding: 1rem;
+    flex: 1;
+}
+
+.event-content h3 {
+    margin-bottom: 0.5rem;
+}
+
+.event-content p {
+    margin-bottom: 1rem;
+}
+
+
+/* Footer */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}

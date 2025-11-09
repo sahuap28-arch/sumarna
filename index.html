@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keluarga</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Bagian Utama -->
+    <header>
+        <nav class="navbar">
+            <div class="container nav-container">
+                <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#keluarga">Keluarga</a></li>
+                    <li><a href="#upload">Upload Photo</a></li>
+                    <li><a href="#gallery">Album</a></li>
+                    <li><a href="#berita">Berita</a></li>
+                </ul>
+                <button class="logout-btn" onclick="handleLogout()">Keluar</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Bagian Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="circular-photo">
+                <img src="img/apa.jpg" alt="Nana Sumarna">
+            </div>
+            <div class="info">
+                <h3>Nana Sumarna</h3>
+                <p>Garut, 15 Maret 1933</p>
+                <p>Merupakan anak kembar dari pasangan MA Soemara dan Fulan yang memiliki 5 saudara, di antaranya:</p>
+                <p style="text-align: left; margin-left: 100px;">&#11095; Achdar Charmana<br>&#11095; Nani
+                    Sumarni<br>&#11095; Suratman<br>&#11095; H. Rusmin<br>&#11095; Itoh</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Istri -->
+    <section class="container" id="istri">
+        <div class="wife-content">
+            <div class="wife-grid">
+
+                <!-- Istri Pertama -->
+                <div class="wife-1">
+                    <div class="circular-photo">
+                        <img src="" alt="">
+                    </div>
+                    <h3>Ibu Urnati</h3>
+                    <p>Bandung<br>20 Mei 1980</p>
+                    <p class="children-count">2 Anak</p>
+                </div>
+
+                <!-- Istri Kedua -->
+                <div class="wife-2">
+                    <div class="circular-photo">
+                        <img src="" alt="">
+                    </div>
+                    <h3>Ibu ..... (alm)</h3>
+                    <p>Lahir: <br>Wafat: </p>
+                    <p class="children-count">3 Anak</p>
+                </div>
+
+                <!-- Istri Ketiga -->
+                <div class="wife-3">
+                    <div class="circular-photo">
+                        <img src="img/ema.jpg" alt="">
+                    </div>
+                    <h3>Ibu Idjah (alm)</h3>
+                    <p>Lahir: 12 Maret 1948<br>Wafat: </p>
+                    <p class="children-count">7 Anak</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Anak -->
+    <section class="container" id="keluarga">
+        <div class="children-content">
+            <h2>Untuk melihat informasi setiap keluarga Klik di tombol keluarga.</h2>
+            <div class="children-grid">
+
+                <!-- Anak 1 -->
+                <div class="child-card">
+                    <div class="circular-photo">
+                        <img src="img/1.jpg" alt="1">
+                    </div>
+                    <div class="info-box">
+                        <h3>Hanhan Suhandi</h3>
+                        <p>Bandung<br>04 Mei 1957</p>
+                        <div class="btn btn-border-reveal wa-btn" data-number="+6285777131132">+62 857-7713-1132</div>
+                        <div class="liquid-morph-element" onclick="location.href='anak/han.html'"><span>Keluarga</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anak 2 -->
+                <div class="child-card">
+                    <div class="circular-photo">
+                        <img src="img/2.jpg" alt="2">
+                    </div>
+                    <div class="info-box">
+                        <h3>Yati</h3>
+                        <p>Bandung</p>
+                        <div class="btn btn-border-reveal wa-btn" data-number="+6281322019369">+62 813-2201-9369</div>
+                        <div class="liquid-morph-element" onclick="location.href='anak/yati.html'"><span>Keluarga</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anak 3 -->
+                <div class="child-card">
+                    <div class="circular-photo">
+                        <img src="img/3.jpg" alt="3">
+                    </div>
+                    <div class="info-box">
+                        <h3>Dadang Sutisna</h3>
+                        <p>Bandung</p>
+                        <div class="btn btn-border-reveal wa-btn" data-number="+62">+62</div>
+                        <div class="liquid-morph-element" onclick="location.href='anak/dadang.html'">
+                            <span>Keluarga</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anak 4 -->
+                <div class="child-card">
+                    <div class="circular-photo">
+                        <img src="img/4.jpg" alt="4">
+                    </div>
+                    <div class="info-box">
+                        <h3>Dede Suhendar</h3>
+                        <p>Bandung</p>
+                        <div class="btn btn-border-reveal wa-btn" data-number="+6287717406237">+62 877-1740-6237</div>
+                        <div class="liquid-morph-element" onclick="location.href='anak/dede.html'"><span>Keluarga</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anak 5 -->
+                <div class="child-card">
+                    <div class="circular-photo">
+                        <img src="img/5.jpg" alt="5">
+                    </div>
+                    <div class="info-box">
+                        <h3>Annisa</h3>
+                        <p>Bandung</p>
+                        <div class="btn btn-border-reveal wa-btn" data-number="+62">+62</div>
+                        <div class="liquid-morph-element" onclick="location.href='anak/anissa.html'">
+                            <span>Keluarga</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anak 6 -->
+                <div class="child-card">
+                    <div class="circular-photo">
+                        <img src="img/6.jpg" alt="6">
+                    </div>
+                    <div class="info-box">
+                        <h3>Min Suminar</h3>
+                        <p>Bandung<br>14 Oktober 1967</p>
+                        <div class="btn btn-border-reveal wa-btn" data-number="+62895640001000">+62 895-6400-01000</div>
+                        <div class="liquid-morph-element" onclick="location.href='anak/min.html'"><span>Keluarga</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anak 7 -->
+                <div class="child-card">
+                    <div class="circular-photo">
+                        <img src="img/7.jpg" alt="7">
+                    </div>
+                    <div class="info-box">
+                        <h3>Yan Susiyana</h3>
+                        <p>Bandung<br>1 Januari 1970</p>
+                        <div class="btn btn-border-reveal wa-btn" data-number="+6285290117612">+62 852-9011-7612</div>
+                        <div class="liquid-morph-element" onclick="location.href='anak/yan.html'"><span>Keluarga</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anak 8 -->
+                <div class="child-card">
+                    <div class="circular-photo">
+                        <img src="img/8.jpg" alt="8">
+                    </div>
+                    <div class="info-box">
+                        <h3>Ade Suhendra</h3>
+                        <p>Bandung<br>22 Maret 1972</p>
+                        <div class="btn btn-border-reveal wa-btn" data-number="+6282123445032">+62 821-2344-5032</div>
+                        <div class="liquid-morph-element" onclick="location.href='anak/ade.html'"><span>Keluarga</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anak 9 -->
+                <div class="child-card">
+                    <div class="circular-photo">
+                        <img src="img/9.jpg" alt="9">
+                    </div>
+                    <div class="info-box">
+                        <h3>Didi Sumardi</h3>
+                        <p>Bandung<br>28 Juli 1974</p>
+                        <div class="btn btn-border-reveal wa-btn" data-number="+6287817559593">+62 878-1755-9593</div>
+                        <div class="liquid-morph-element" onclick="location.href='anak/didi.html'"><span>Keluarga</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anak 10 -->
+                <div class="child-card">
+                    <div class="circular-photo">
+                        <img src="img/10.jpg" alt="10">
+                    </div>
+                    <div class="info-box">
+                        <h3>Aman Suryaman</h3>
+                        <p>Bandung<br>24 Mei 1977</p>
+                        <div class="btn btn-border-reveal wa-btn" data-number="+62">+62</div>
+                        <div class="liquid-morph-element" onclick="location.href='anak/aman.html'"><span>Keluarga</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anak 11 -->
+                <div class="child-card">
+                    <div class="circular-photo">
+                        <img src="img/11.jpg" alt="11">
+                    </div>
+                    <div class="info-box">
+                        <h3>Wawan Surtiawan</h3>
+                        <p>Bandung<br>27 Agustus 1979</bre>
+                        </p>
+                        <div class="btn btn-border-reveal wa-btn" data-number="+62889698263010">+62 896-9826-3010</div>
+                        <div class="liquid-morph-element" onclick="location.href='anak/wawan.html'">
+                            <span>Keluarga</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anak 12 -->
+                <div class="child-card">
+                    <div class="circular-photo">
+                        <img src="img/12.jpg" alt="12">
+                    </div>
+                    <div class="info-box">
+                        <h3>Adi Suhardiana (alm)</h3>
+                        <p>Lahir:<br>Bandung, 18 April 1982<br>Wafat:<br>Bandung</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="upload-section">
+        <div class="container" id="upload">
+            <h2>Gallery</h2>
+
+            <div class="upload-area" id="uploadArea">
+                <i>📁</i>
+                <p class="upload-text">Klik atau seret foto ke sini</p>
+                <p>Format yang didukung: JPG, PNG, GIF (Maks. 5MB)</p>
+                <input type="file" id="fileInput" class="file-input" accept="image/*" multiple>
+            </div>
+            <button id="uploadBtn" class="btn" disabled>Simpan Foto</button>
+    </section>
+
+    <section class="preview-section" id="previewSection">
+        <h3 class="preview-title">Pratinjau Foto</h3>
+        <div class="preview-container" id="previewContainer">
+            <!-- Preview gambar akan ditampilkan di sini -->
+        </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+        <h2 class="gallery-title">Galeri Foto</h2>
+        <div class="gallery-container" id="galleryContainer">
+            <div class="empty-gallery">
+                <i>🖼️</i>
+                <p>Belum ada foto yang diunggah</p>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="notification" id="notification"></div>
+
+    <!-- Bagian Berita -->
+    <section class="container" id="berita">
+        <div class="bewara-section">
+            <h2>Berita Kegiatan atau Acara</h2>
+            <p class="section-subtitle"></p>
+            <div class="events-timeline">
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="date-day">Hari</span>
+                        <span class="date-month">Bulan</span>
+                        <span class="date-year">Tahun</span>
+                    </div>
+                    <div class="event-content">
+                        <h3></h3>
+                        <p>Tempat :</p>
+                        <p>Waktu :</p>
+                        <p>Acara :</p>
+                        <p>Keterangan :</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Keluarga Sumarna. Semua hak cipta dilindungi.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
