@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Default users
     const defaultUsers = [
-        { username: "admin", password: "admin123", role: "admin" },
+        { username: "admin", password: "D5um@rd1", role: "admin" },
         { username: "user", password: "user123", role: "user" },
     ];
     if (!localStorage.getItem("users")) {
@@ -130,3 +130,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1500);
     });
 });
+
